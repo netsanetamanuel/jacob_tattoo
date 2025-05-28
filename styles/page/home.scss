@@ -1,0 +1,78 @@
+/*
+Primary color: 
+
+
+*/
+@use "mixins" as *;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.home_body{
+  background-image: linear-gradient(to right bottom, rgba(77, 61, 61, 0.856), rgba(27, 24, 24, 0.692)), url(/assets/images/home.jpg);
+  background-position: center;
+  background-size: contain;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  padding: 10px;
+
+  .header{
+    grid-row: 1/2;
+    @include header_style;
+}
+
+.home_section{
+   
+    grid-row: 2/3;
+    height: auto;
+    padding: 10px;
+    margin-top: -30px;
+    .text_container{
+       
+         text-align: center;
+         margin: 10px 10px;
+        .text_h1{
+           text-transform: uppercase;
+           letter-spacing: 1px;
+           font-family: 'Courier New', Courier, monospace;
+           margin: 15px 0px;
+           width: 100%;
+
+
+
+
+        }
+        .text_h2{
+            text-transform: uppercase;
+           letter-spacing: 4px;
+           font-family: 'Courier New', Courier, monospace;
+                      
+  font-family: "Rye",serif;
+        }
+    }
+    .home_btn{
+        text-align: center;
+        button{
+            padding: 10px 10px;
+            text-transform: uppercase;
+            background-color: rgb(97, 40, 40);
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    }
+   
+
+}
+
+
+}/*# sourceMappingURL=main.css.map */
+
+
+
+
+
+
