@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.artist_home {
+  background-color: rgb(22, 21, 21);
+  padding: 10px;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 1fr 2fr;
+}
+
+.header {
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.205);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-height: 70px;
+  border-radius: 10px;
+  grid-row: 1/2;
+  height: 150px;
+}
+.header ul li {
+  display: flex;
+  justify-content: space-around;
+  margin-inline: 50px;
+  text-align: center;
+  align-items: center;
+}
+.header ul li .logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+.header ul li a:not(:has(img)) {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+}
+.header ul li a:not(:has(img))::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #f0e7e7;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.header ul li a:not(:has(img)):hover::after {
+  transform: scaleX(1);
+}
+
+.artist_team {
+  grid-row: 2/3;
+  height: auto;
+  margin-top: -100px;
+  padding: 20px;
+}
+.artist_team .artist_container .artist_1 {
+  display: flex;
+  margin: 10px 10px;
+  gap: 20px;
+  align-items: center;
+}
+.artist_team .artist_container .artist_1 .artist_img img {
+  width: 40px;
+  height: 60px;
+}
+.artist_team .artist_container .artist_1 .artist_profile .artist_contact img {
+  width: 10px;
+  height: 10px;
+}/*# sourceMappingURL=artist.css.map */

@@ -1,0 +1,104 @@
+/*
+Primary color: 
+
+
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.home_body {
+  background-image: linear-gradient(to right bottom, rgba(77, 61, 61, 0.856), rgba(27, 24, 24, 0.692)), url(/assets/images/home.jpg);
+  background-position: center;
+  background-size: contain;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  padding: 10px;
+}
+.home_body .header {
+  grid-row: 1/2;
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.205);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-height: 70px;
+  border-radius: 10px;
+}
+.home_body .header ul li {
+  display: flex;
+  justify-content: space-around;
+  margin-inline: 50px;
+  text-align: center;
+  align-items: center;
+}
+.home_body .header ul li .logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+.home_body .header ul li a:not(:has(img)) {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+}
+.home_body .header ul li a:not(:has(img))::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #f0e7e7;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.home_body .header ul li a:not(:has(img)):hover::after {
+  transform: scaleX(1);
+}
+.home_body .home_section {
+  grid-row: 2/3;
+  height: auto;
+  padding: 10px;
+  margin-top: -30px;
+}
+.home_body .home_section .text_container {
+  text-align: center;
+  margin: 10px 10px;
+}
+.home_body .home_section .text_container .text_h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Courier New", Courier, monospace;
+  margin: 15px 0px;
+  width: 100%;
+}
+.home_body .home_section .text_container .text_h2 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: "Courier New", Courier, monospace;
+  font-family: "Rye", serif;
+}
+.home_body .home_section .home_btn {
+  text-align: center;
+}
+.home_body .home_section .home_btn button {
+  padding: 10px 10px;
+  text-transform: uppercase;
+  background-color: rgb(97, 40, 40);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/*# sourceMappingURL=home.css.map */
