@@ -14,14 +14,15 @@
      display: grid;
      height: 100vh;
      grid-template-rows: 1fr 2fr;
-
-}
-.header{
+     .header{
     @include header_style;
     grid-row: 1/2;
     height: 150px;
     
 }
+
+}
+
 
 // .artist_team{
 //     grid-row: 2/3;
@@ -80,7 +81,7 @@
     margin-top: -100px;
     padding: 20px;
     .artist_container{
-        .artist_1{
+        .artist_1,.artist_2{
             display: flex;
             margin: 10px 10px;
             gap: 20px;

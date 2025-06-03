@@ -11,8 +11,7 @@
   height: 100vh;
   grid-template-rows: 1fr 2fr;
 }
-
-.header {
+.artist_home .header {
   width: auto;
   background-color: rgba(255, 255, 255, 0.205);
   backdrop-filter: blur(10px);
@@ -22,14 +21,14 @@
   grid-row: 1/2;
   height: 150px;
 }
-.header ul li {
+.artist_home .header ul li {
   display: flex;
   justify-content: space-around;
   margin-inline: 50px;
   text-align: center;
   align-items: center;
 }
-.header ul li .logo {
+.artist_home .header ul li .logo {
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -37,7 +36,7 @@
   margin-left: 100px;
   cursor: pointer;
 }
-.header ul li a:not(:has(img)) {
+.artist_home .header ul li a:not(:has(img)) {
   color: #000;
   text-decoration: none;
   text-transform: uppercase;
@@ -46,7 +45,7 @@
   font-family: "Courier New", Courier, monospace;
   position: relative;
 }
-.header ul li a:not(:has(img))::after {
+.artist_home .header ul li a:not(:has(img))::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -58,7 +57,7 @@
   transform-origin: left;
   transition: transform 0.5s;
 }
-.header ul li a:not(:has(img)):hover::after {
+.artist_home .header ul li a:not(:has(img)):hover::after {
   transform: scaleX(1);
 }
 
@@ -68,17 +67,17 @@
   margin-top: -100px;
   padding: 20px;
 }
-.artist_team .artist_container .artist_1 {
+.artist_team .artist_container .artist_1, .artist_team .artist_container .artist_2 {
   display: flex;
   margin: 10px 10px;
   gap: 20px;
   align-items: center;
 }
-.artist_team .artist_container .artist_1 .artist_img img {
+.artist_team .artist_container .artist_1 .artist_img img, .artist_team .artist_container .artist_2 .artist_img img {
   width: 40px;
   height: 60px;
 }
-.artist_team .artist_container .artist_1 .artist_profile .artist_contact img {
+.artist_team .artist_container .artist_1 .artist_profile .artist_contact img, .artist_team .artist_container .artist_2 .artist_profile .artist_contact img {
   width: 10px;
   height: 10px;
 }/*# sourceMappingURL=artist.css.map */
