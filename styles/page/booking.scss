@@ -1,0 +1,20 @@
+
+@use "mixins" as *;
+
+.booking_home{
+    
+     background-color: rgb(22, 21, 21);
+     padding:10px;
+     display: grid;
+     height: 100vh;
+     grid-template-rows: 1fr 2fr;
+     .header{
+    @include header_style;
+    grid-row: 1/2;
+    height: 150px;
+    
+}
+
+
+
+}
