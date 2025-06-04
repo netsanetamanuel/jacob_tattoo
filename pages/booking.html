@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
 <body class="booking_home">
          <header class="header">
@@ -24,8 +27,8 @@
         <div class="booking_title">
             <h1>Book you appointment now</h1>
         </div>
-        <form id="form_container">
-            <section class="group_one" id="one">
+        <form class="form_container">
+            <section class="group_one" >
                 <div class="form_group">
                      <label for="fname">first Name  <input type="text" id="fname"> </label>
                      <label for="lname">last name <input type="text" id="lname"></label>
@@ -36,59 +39,29 @@
                 </div>
             </section>
 
-            <section class="group-two" id="two">
-                  <div class="tattoo_service">
-                    TATOO
-                  </div>
-                  <div class="pierce_service"> PIERCING</div>
+            <section class="group_two">
+                <div class="tat_service">
+                    <button id="tat_btn" type="button"><i class="fa-solid fa-angle-down"></i></button> 
+                    <!-- an html error causes browser rendering issue  -->
+                    <h1 class="tat_service--title">Tattoo service</h1>
+                     <hr>
+                </div>
+                <div class="tat_form" id="tat_form">
+                    <label for="description"> Tatoo description</label>
+                    <textarea name="description" id="description">descripbe ur tat</textarea>
+               
+                     <label for="placement">placement on body</label>
+                     <input type="text" id="placement">
+                </div>
+
             </section>
 
-            <section class="group_three">
-                <div class="form_group">
-                    <label for="description">tatoo description<textarea type="text" id="description" rows="4" cols="20"></textarea>
-                </div>
-                <div class="form_group">
-                     <label for="body_part">Placement on body<input type="text"></label>   
-                    </div>
-                    <div class="form_group">
-                     <label for="body_part">Approximate size<input type="text"></label>   
-                    </div>
-                    <div class="form_group">
-                          <label for="document">Upload supporting file<input type="file" id="document" accept=".png ,.jpeg,.jpg,.webp" aria-required="true"></label>
-                    </div>
-            </section>
+           
 
-           <section class="group_four">
-             <div class="form_group">
-                <h1>Pierce type</h1>
-                     <label for="type">NOse pierce</label>  
-                     <input type="radio" id="type"> 
-
-                     <label for="type">ear pierce</label>  
-                     <input type="radio" id="type"> 
-
-                     <label for="type">lip pierce</label>  
-                     <input type="radio" id="type"> 
-
-                     <label for="type">face pierce</label>  
-                     <input type="radio" id="type"> 
-                </div>
-                  <div class="form_group">
-                          <label for="document">Upload supporting file<input type="file" id="document" accept=".png ,.jpeg,.jpg,.webp" aria-required="true"></label>
-                    </div>
-           </section>
-           <section class="group_five">
-            <label for="artist">Your artist</label>
-            <select name="artist" id="artist" aria-required="true">
-                <option value="jacob">Jacob</option>
-                  <option value="elias">Elias</option>
-                
-            </select>
-           </section>
 
         </form>
     </section>
 
-    
+    <script src="/script/script.js"></script>
 </body>
 </html>

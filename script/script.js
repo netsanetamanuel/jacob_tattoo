@@ -50,7 +50,6 @@
 
 // window.onload = () => show_image(current_index) ;
 
-
 const gallery = document.querySelectorAll('.gallery__1');
 const gallery_2 = document.querySelectorAll('.gallery__2');
 
@@ -66,6 +65,27 @@ function addAnimation(){
         gal.setAttribute("data-animated",true);
     })
 }
+
+// dropdown hide and show 
+const tat_btn = document.getElementById('tat_btn');
+ const tat_form = document.querySelector('.tat_form');
+
+tat_btn.addEventListener('click', () =>{
+    
+    tat_form.classList.toggle('hide');
+    //  if(tat_form.style.display === 'none'){
+    //     tat_form.style.display ='flex';
+    //  }else{
+    //     tat_form.style.display = 'none'
+    //  }
+
+   
+     
+})
+
+
+   
+   
 
 
 

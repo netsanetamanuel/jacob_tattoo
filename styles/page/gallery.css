@@ -94,6 +94,8 @@
 }
 .gallery_home .gallery__1--cont img:hover {
   transform: scale(1.3);
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 .gallery_home .gallery__2 {
   grid-row: 2/3;

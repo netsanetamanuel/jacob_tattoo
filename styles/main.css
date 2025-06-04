@@ -282,6 +282,8 @@ Primary color:
 }
 .gallery_home .gallery__1--cont img:hover {
   transform: scale(1.3);
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 .gallery_home .gallery__2 {
   grid-row: 2/3;
@@ -324,7 +326,15 @@ Primary color:
     transform: translateX(0);
   }
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .booking_home {
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
   background-color: rgb(22, 21, 21);
   padding: 10px;
   display: grid;
@@ -379,4 +389,128 @@ Primary color:
 }
 .booking_home .header ul li a:not(:has(img)):hover::after {
   transform: scaleX(1);
+}
+.booking_home .booking_section {
+  grid-row: 2/3;
+  margin: -4rem 20px;
+}
+.booking_home .booking_section .booking_title {
+  background-color: yellow;
+  margin: 10px;
+  align-items: center;
+  text-align: center;
+}
+.booking_home .booking_section .form_container {
+  color: blue;
+}
+.booking_home .booking_section .form_container .group_one {
+  background-color: aqua;
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+}
+.booking_home .booking_section .form_container .group_one .form_group input {
+  padding: 5px;
+  margin: 5px;
+}
+.booking_home .booking_section .form_container .group_two .tat_service {
+  display: flex;
+  align-items: center;
+}
+.booking_home .booking_section .form_container .group_two .tat_service button {
+  padding: 5px;
+}
+.booking_home .booking_section .form_container .group_two .tat_service h1 {
+  font-size: 10px;
+  margin: 5px;
+}
+.booking_home .booking_section .form_container .group_two .tat_service hr {
+  height: 2px;
+  width: 100%;
+}
+.booking_home .booking_section .form_container .group_two .tat_form {
+  display: flex;
+  background-color: yellowgreen;
+  flex-direction: column;
+  opacity: 1;
+  transform: scaleY(1);
+  transform-origin: top;
+  overflow: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.booking_home .booking_section .form_container .group_two .tat_form.hide {
+  opacity: 0;
+  transform: scaleY(0);
+  pointer-events: none;
+}
+
+.contact_home {
+  background-color: rgb(22, 21, 21);
+  padding: 10px;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 1fr 2fr;
+}
+.contact_home .header {
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.205);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-height: 70px;
+  border-radius: 10px;
+  grid-row: 1/2;
+  height: 150px;
+}
+.contact_home .header ul li {
+  display: flex;
+  justify-content: space-around;
+  margin-inline: 50px;
+  text-align: center;
+  align-items: center;
+}
+.contact_home .header ul li .logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+.contact_home .header ul li a:not(:has(img)) {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+}
+.contact_home .header ul li a:not(:has(img))::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #f0e7e7;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.contact_home .header ul li a:not(:has(img)):hover::after {
+  transform: scaleX(1);
+}
+.contact_home .contact_us {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.contact_home .contact_us .address {
+  width: 400px;
+  height: 400px;
+  background-color: yellow;
+}
+.contact_home .contact_us .map {
+  width: 400px;
+  height: 400px;
 }/*# sourceMappingURL=main.css.map */

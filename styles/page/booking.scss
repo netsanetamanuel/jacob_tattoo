@@ -1,8 +1,14 @@
 
 @use "mixins" as *;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 .booking_home{
-    
+     font-family: 'Courier New', Courier, monospace;
+     text-transform: uppercase;
      background-color: rgb(22, 21, 21);
      padding:10px;
      display: grid;
@@ -12,6 +18,78 @@
     @include header_style;
     grid-row: 1/2;
     height: 150px;
+    
+}
+
+.booking_section{
+    grid-row: 2/3;
+    margin: -4rem 20px;
+    .booking_title{
+        background-color: yellow;
+        margin: 10px;
+        align-items: center;
+        text-align: center;
+        h1{
+
+        }
+    }
+    .form_container{
+        color: blue;
+        .group_one{
+            background-color: aqua;
+            margin: 10px;
+            padding: 20px;
+            width: 100%;
+            .form_group{
+             input{
+                padding: 5px;
+                margin: 5px;
+             }
+
+            }
+        }
+        .group_two{
+            .tat_service{
+                display: flex;
+                align-items: center;
+              
+                button{
+                    padding: 5px;
+                }
+
+                h1{
+                    font-size: 10px;
+                    margin: 5px;
+
+                }
+
+                hr{
+                    height: 2px;
+                    width: 100%;
+                }
+            }
+
+            .tat_form{
+                display: flex;
+                background-color: yellowgreen;
+                flex-direction: column;
+                opacity: 1;
+                transform: scaleY(1);
+                transform-origin: top;
+                overflow: hidden;
+                transition: opacity 0.5s ease , transform 0.5s ease;
+                
+            }
+            .tat_form.hide{
+                    opacity: 0;
+                    transform: scaleY(0);
+                    pointer-events: none;
+                }
+            
+        }
+    }
+
+
     
 }
 
