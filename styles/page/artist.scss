@@ -80,31 +80,120 @@
     height: auto;
     margin-top: -100px;
     padding: 20px;
+    overflow: hidden;
+    .artist_title{
+        text-transform: uppercase;
+        color: rgb(168, 33, 33);
+        text-align: center;
+        width: 100%;
+        letter-spacing: 5px;
+        font-size: 30px;
+        font-weight: 450px;
+        font-family: 'Courier New', Courier, monospace;
+    
+        hr{
+            width: 80%;
+            margin-top: 30px;
+            margin-left: auto;
+
+           
+            
+        }
+    }
+   
     .artist_container{
+        margin-inline: 10px;
+        gap: 10px;
+        display: flex;
+         
         .artist_1,.artist_2{
             display: flex;
-            margin: 10px 10px;
+            margin: 50px 10px;
             gap: 20px;
-            align-items:center;
+            align-items:flex-start;
+            
             .artist_img{
-                
+               
+                width: 430px;
+                height: 20rem;
+                border-radius: 10px;
                 img{
-                       width: 40px;
-                    height: 60px;
+                       width: 108%;
+                       height: 100%;
+                         border-radius: 10px;
+                       box-shadow: 2px 3px #1b1a1a3a;
+                       transition: all .3s;
+                       &:hover{
+                          transform: scale(1.2) ;
+                         
+                       }
+
+
                 }
              
             }
             .artist_profile{
+                
+                  margin:10px 20px;
+                
                 .artist_name{
+                    text-transform: uppercase;
+                    font-family: 'Courier New', Courier, monospace;
+                    letter-spacing: 2px;
+                    font-size: 25px;
+                    margin: 10px;
+                    background-image: linear-gradient(to right bottom , rgb(168, 33, 33), rgb(196, 109, 109));
+                    -webkit-background-clip: text;
+                    color: transparent;
 
                 }
                 .artist_text{
+                    text-transform: uppercase;
+                    font-size: 15px;
+                    letter-spacing: 1px;
+                    margin: 20px 10px ;
+                    line-height: 25px;
+                    color:#f8eaea;
+
+
 
                 }
                 .artist_contact{
+                    margin: 10px 0;
+                    display: flex;
+                    
+                   
+                    
                     img{
-                        width: 10px;
-                        height: 10px;
+                        cursor: pointer;
+                        margin-top: 10px;
+                        align-items: center;
+                        
+                        margin-inline: 15px;
+                        height: 20px;
+                        transition: all .2s;
+
+                        &:hover{
+                           
+                            transform: scale(1.3);
+                            
+               
+                        }
+                        &:hover:nth-child(1),svg{
+                            filter: invert(39%) sepia(57%) saturate(2000%) hue-rotate(190deg) brightness(90%) contrast(95%);
+
+                        }
+                        &:hover:nth-child(2),svg{
+                            filter: invert(26%) sepia(89%) saturate(2000%) hue-rotate(320deg) brightness(95%) contrast(90%);
+
+                        }
+                        &:hover:nth-child(3),svg{
+                           filter: 
+        invert(15%) sepia(99%) saturate(6932%) 
+        hue-rotate(340deg) brightness(99%) contrast(101%);
+
+                        }
+                       
                     }
                 }
             }
