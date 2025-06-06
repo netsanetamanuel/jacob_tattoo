@@ -8,12 +8,12 @@
   background: rgb(14, 13, 13);
   display: grid;
   padding: 20px;
-  height: 150vh;
+  height: 160vh;
   grid-template-rows: 1fr 2fr;
 }
 .gallery_home .header {
   width: auto;
-  background-color: rgba(255, 255, 255, 0.205);
+  background-color: rgba(255, 255, 255, 0.315);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   max-height: 70px;
@@ -41,20 +41,26 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 600;
+  font-size: 18px;
   font-family: "Courier New", Courier, monospace;
   position: relative;
+  transition: all 0.3s;
 }
 .gallery_home .header ul li a:not(:has(img))::after {
   content: "";
   position: absolute;
-  top: 50%;
+  bottom: -3px;
   left: 0;
   height: 2px;
   width: 100%;
-  background-color: #f0e7e7;
+  background-color: rgb(168, 33, 33);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s;
+}
+.gallery_home .header ul li a:not(:has(img)):hover {
+  color: rgba(172, 41, 41, 0.918);
+  transform: scale(1.1);
 }
 .gallery_home .header ul li a:not(:has(img)):hover::after {
   transform: scaleX(1);
@@ -62,7 +68,7 @@
 .gallery_home .gallery {
   grid-row: 2/3;
   padding: 20px;
-  margin-top: 4rem;
+  margin-top: 6rem;
   gap: 20px;
   display: grid;
   grid-template-rows: repeat(2, 2fr);
@@ -83,19 +89,22 @@
   align-items: center;
   gap: 30px;
   margin: 20px;
-  animation: scroll 20s linear infinite;
+  padding: 30px;
+  animation: scroll 15s linear infinite;
 }
 .gallery_home .gallery__1--cont img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 300px;
   flex-shrink: 0;
+  border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s;
+  z-index: 1;
 }
 .gallery_home .gallery__1--cont img:hover {
-  transform: scale(1.3);
-  animation-play-state: paused;
-  -webkit-animation-play-state: paused;
+  transform: scaleX(1.6) scaleY(1.3);
+  z-index: 100;
 }
 .gallery_home .gallery__2 {
   grid-row: 2/3;
@@ -112,13 +121,15 @@
   width: max-content;
   align-items: center;
   gap: 20px;
-  animation: scroll_1 10s linear infinite;
+  border-radius: 10px;
+  animation: scroll 10s linear infinite;
 }
 .gallery_home .gallery__2--cont img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 300px;
   flex-shrink: 0;
+  border-radius: 10px;
   cursor: pointer;
 }
 

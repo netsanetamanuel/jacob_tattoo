@@ -11,7 +11,7 @@ Primary color:
 }
 
 .home_body{
-  background-image: linear-gradient(to right bottom, rgba(77, 61, 61, 0.856), rgba(27, 24, 24, 0.692)), url(/assets/images/home.jpg);
+  background-image: linear-gradient(to right bottom, rgba(77, 61, 61, 0.856), rgba(27, 24, 24, 0.747)), url(/assets/images/home.jpg);
   background-position: center;
   background-size: contain;
   height: 100vh;
@@ -38,8 +38,11 @@ Primary color:
            text-transform: uppercase;
            letter-spacing: 1px;
            font-family: 'Courier New', Courier, monospace;
-           margin: 15px 0px;
-           width: 100%;
+           margin: 25px auto;
+           font-weight: bold;
+          font-size: 22px;
+           width: 95%;
+           color: rgb(0, 0, 0);
 
 
 
@@ -49,6 +52,10 @@ Primary color:
             text-transform: uppercase;
            letter-spacing: 4px;
            font-family: 'Courier New', Courier, monospace;
+           font-size: 55px;
+           color: rgb(206, 4, 4);
+           
+         
                       
   font-family: "Rye",serif;
         }
@@ -56,17 +63,41 @@ Primary color:
     .home_btn{
         text-align: center;
         button{
-            padding: 10px 10px;
+            padding: 15px 20px;
             text-transform: uppercase;
-            background-color: rgb(97, 40, 40);
+            background-color: rgb(134, 49, 49);
             cursor: pointer;
             border: none;
             outline: none;
+            color: black;
+            font-size: 15px;
+            letter-spacing: 1.2px;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 1px ;
+            transition: all .6s ;
+            box-shadow: 1px 2px #1b19193f;
+
+            &:hover{
+                background-color: rgb(167, 28, 28);
+                transform: rotateY(-25deg);
+
+
+            }
+            i{
+                font-size: 17px;
+              
+            
+                
+            }
+            
+            
         }
     }
    
 
 }
+
 
 
 }/*# sourceMappingURL=main.css.map */

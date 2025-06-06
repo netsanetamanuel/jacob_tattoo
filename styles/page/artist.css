@@ -13,7 +13,7 @@
 }
 .artist_home .header {
   width: auto;
-  background-color: rgba(255, 255, 255, 0.205);
+  background-color: rgba(255, 255, 255, 0.315);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   max-height: 70px;
@@ -42,20 +42,26 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 600;
+  font-size: 18px;
   font-family: "Courier New", Courier, monospace;
   position: relative;
+  transition: all 0.3s;
 }
 .artist_home .header ul li a:not(:has(img))::after {
   content: "";
   position: absolute;
-  top: 50%;
+  bottom: -3px;
   left: 0;
   height: 2px;
   width: 100%;
-  background-color: #f0e7e7;
+  background-color: rgb(168, 33, 33);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s;
+}
+.artist_home .header ul li a:not(:has(img)):hover {
+  color: rgba(172, 41, 41, 0.918);
+  transform: scale(1.1);
 }
 .artist_home .header ul li a:not(:has(img)):hover::after {
   transform: scaleX(1);
@@ -66,18 +72,91 @@
   height: auto;
   margin-top: -100px;
   padding: 20px;
+  overflow: hidden;
+}
+.artist_team .artist_title {
+  text-transform: uppercase;
+  color: rgb(168, 33, 33);
+  text-align: center;
+  width: 100%;
+  letter-spacing: 5px;
+  font-size: 30px;
+  font-weight: 450px;
+  font-family: "Courier New", Courier, monospace;
+}
+.artist_team .artist_title hr {
+  width: 80%;
+  margin-top: 30px;
+  margin-left: auto;
+}
+.artist_team .artist_container {
+  margin-inline: 10px;
+  gap: 10px;
+  display: flex;
 }
 .artist_team .artist_container .artist_1, .artist_team .artist_container .artist_2 {
   display: flex;
-  margin: 10px 10px;
+  margin: 50px 10px;
   gap: 20px;
-  align-items: center;
+  align-items: flex-start;
+}
+.artist_team .artist_container .artist_1 .artist_img, .artist_team .artist_container .artist_2 .artist_img {
+  width: 430px;
+  height: 20rem;
+  border-radius: 10px;
 }
 .artist_team .artist_container .artist_1 .artist_img img, .artist_team .artist_container .artist_2 .artist_img img {
-  width: 40px;
-  height: 60px;
+  width: 108%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 3px rgba(27, 26, 26, 0.2274509804);
+  transition: all 0.3s;
+}
+.artist_team .artist_container .artist_1 .artist_img img:hover, .artist_team .artist_container .artist_2 .artist_img img:hover {
+  transform: scale(1.2);
+}
+.artist_team .artist_container .artist_1 .artist_profile, .artist_team .artist_container .artist_2 .artist_profile {
+  margin: 10px 20px;
+}
+.artist_team .artist_container .artist_1 .artist_profile .artist_name, .artist_team .artist_container .artist_2 .artist_profile .artist_name {
+  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 2px;
+  font-size: 25px;
+  margin: 10px;
+  background-image: linear-gradient(to right bottom, rgb(168, 33, 33), rgb(196, 109, 109));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.artist_team .artist_container .artist_1 .artist_profile .artist_text, .artist_team .artist_container .artist_2 .artist_profile .artist_text {
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 20px 10px;
+  line-height: 25px;
+  color: #f8eaea;
+}
+.artist_team .artist_container .artist_1 .artist_profile .artist_contact, .artist_team .artist_container .artist_2 .artist_profile .artist_contact {
+  margin: 10px 0;
+  display: flex;
 }
 .artist_team .artist_container .artist_1 .artist_profile .artist_contact img, .artist_team .artist_container .artist_2 .artist_profile .artist_contact img {
-  width: 10px;
-  height: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  align-items: center;
+  margin-inline: 15px;
+  height: 20px;
+  transition: all 0.2s;
+}
+.artist_team .artist_container .artist_1 .artist_profile .artist_contact img:hover, .artist_team .artist_container .artist_2 .artist_profile .artist_contact img:hover {
+  transform: scale(1.3);
+}
+.artist_team .artist_container .artist_1 .artist_profile .artist_contact img:hover:nth-child(1), .artist_team .artist_container .artist_1 .artist_profile .artist_contact img svg, .artist_team .artist_container .artist_2 .artist_profile .artist_contact img:hover:nth-child(1), .artist_team .artist_container .artist_2 .artist_profile .artist_contact img svg {
+  filter: invert(39%) sepia(57%) saturate(2000%) hue-rotate(190deg) brightness(90%) contrast(95%);
+}
+.artist_team .artist_container .artist_1 .artist_profile .artist_contact img:hover:nth-child(2), .artist_team .artist_container .artist_1 .artist_profile .artist_contact img svg, .artist_team .artist_container .artist_2 .artist_profile .artist_contact img:hover:nth-child(2), .artist_team .artist_container .artist_2 .artist_profile .artist_contact img svg {
+  filter: invert(26%) sepia(89%) saturate(2000%) hue-rotate(320deg) brightness(95%) contrast(90%);
+}
+.artist_team .artist_container .artist_1 .artist_profile .artist_contact img:hover:nth-child(3), .artist_team .artist_container .artist_1 .artist_profile .artist_contact img svg, .artist_team .artist_container .artist_2 .artist_profile .artist_contact img:hover:nth-child(3), .artist_team .artist_container .artist_2 .artist_profile .artist_contact img svg {
+  filter: invert(15%) sepia(99%) saturate(6932%) hue-rotate(340deg) brightness(99%) contrast(101%);
 }/*# sourceMappingURL=artist.css.map */

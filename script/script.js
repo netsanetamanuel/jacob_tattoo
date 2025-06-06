@@ -50,14 +50,16 @@
 
 // window.onload = () => show_image(current_index) ;
 
-const gallery = document.querySelectorAll('.gallery__1');
-const gallery_2 = document.querySelectorAll('.gallery__2');
+
 
 if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
     addAnimation();
 }
 
 function addAnimation(){
+    const gallery = document.querySelectorAll('.gallery__1');
+const gallery_2 = document.querySelectorAll('.gallery__2');
+
     gallery.forEach((galleries)=>{
         galleries.setAttribute("data-animated",true);
     })
@@ -65,6 +67,21 @@ function addAnimation(){
         gal.setAttribute("data-animated",true);
     })
 }
+
+
+function pauseanimation(){
+    
+    const images = document.querySelectorAll('.gallery__1--cont img');
+
+    images.forEach((img)=>{
+        img.addEventListener('mouseenter',()=>{
+            img.style.width = "50vw"
+
+    })
+    })
+}
+
+//pauseanimation();
 
 // dropdown hide and show 
 const tat_btn = document.getElementById('tat_btn');
