@@ -7,7 +7,7 @@
 }
 .contact_home .header {
   width: auto;
-  background-color: rgba(255, 255, 255, 0.205);
+  background-color: rgba(255, 255, 255, 0.315);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   max-height: 70px;
@@ -36,20 +36,26 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 600;
+  font-size: 18px;
   font-family: "Courier New", Courier, monospace;
   position: relative;
+  transition: all 0.3s;
 }
 .contact_home .header ul li a:not(:has(img))::after {
   content: "";
   position: absolute;
-  top: 50%;
+  bottom: -3px;
   left: 0;
   height: 2px;
   width: 100%;
-  background-color: #f0e7e7;
+  background-color: rgb(168, 33, 33);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s;
+}
+.contact_home .header ul li a:not(:has(img)):hover {
+  color: rgba(172, 41, 41, 0.918);
+  transform: scale(1.1);
 }
 .contact_home .header ul li a:not(:has(img)):hover::after {
   transform: scaleX(1);

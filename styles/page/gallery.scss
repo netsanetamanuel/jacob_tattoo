@@ -18,6 +18,7 @@
     .header{
         @include header_style;
         grid-row: 1/2;
+        
     }
 
 
@@ -49,25 +50,36 @@
             
 
         }
+        &--title{
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-size: 28px;
+            color: rgb(184, 50, 50);
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: -5px;
+            
+
+        }
         &--cont{
             display: flex;
             width: max-content;
             align-items: center;
-            gap: 30px;
+            justify-content: space-evenly;
+            gap: 7rem;
             margin: 20px;
             padding: 30px;
             animation: scroll  15s linear infinite;
-            
-            
-            
+    
             img{
                 object-fit: cover;
-                width: 300px;
+                width: 270px;
                 flex-shrink: 0;
                  border-radius: 5px;
                 cursor: pointer;
                 transition: all .3s;
                 z-index: 1;
+                
                 
                 &:hover{
                     transform: scaleX(1.6) scaleY(1.3);
@@ -101,16 +113,26 @@
             display: flex;
             width: max-content;
             align-items: center;
-            gap: 20px;
+            justify-content: space-evenly;
+            gap: 7rem;
             border-radius: 10px;
-            animation: scroll 10s linear infinite;
+            animation: scroll_1 10s linear infinite;
             img{
                 object-fit: cover;
-                width: 300px;
+                width: 270px;
                 flex-shrink: 0;
                 border-radius: 10px;
                 cursor: pointer;
+                transition: all .3s;
+                border-radius: 10px;
+                &:hover{
+                    transform: scale(1.3);
+                    
+                }
+                position: relative;
             }
+
+
         }
 
     }
@@ -118,6 +140,7 @@
 
     }
 }
+
 
 @keyframes scroll{
    0%{
