@@ -1,36 +1,101 @@
+// Contact Page Specific Styles
+
+
+
+
 @use "mixins" as *;
 
-.contact_home{
-     background-color: rgb(22, 21, 21);
-     padding:10px;
-     display: grid;
-     height: 100vh;
-     grid-template-rows: 1fr 2fr;
-     .header{
+.contact_home {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+  .header {
     @include header_style;
+    margin-top: 10px;
     grid-row: 1/2;
     height: 150px;
-}
+  }
 
+  .contact_us {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 
-.contact_us{
-    display: flex;
-    justify-content: space-around;
-    overflow: hidden;
-    .address{
-        width: 400px;
-        height: 400px;
-        background-color: yellow;
-
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
     }
-    .map{
-         width: 400px;
-        height: 400px;
-        iframe{
+  }
 
+  .address {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
+    h2 {
+      color: #6e110e;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #e2312b;
+      padding-bottom: 0.5rem;
+    }
+
+    .contact-info {
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+
+      i {
+        color: #da2121;
+        margin-right: 1rem;
+        font-size: 1.3rem;
+        width: 30px;
+        text-align: center;
+      }
+    }
+
+    .business-hours {
+      h3 {
+        color: #db2e2e;
+        margin-bottom: 1rem;
+      }
+
+      .hours-list {
+        list-style: none;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 0.5rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 1px dashed #333;
         }
-
+      }
     }
-}
+  }
+
+  .map {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    min-height: 450px;
+    background-color: #1e1e1e;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 450px;
+      border: none;
+    }
+  }
 }

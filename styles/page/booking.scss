@@ -1,93 +1,250 @@
 
 @use "mixins" as *;
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+  $primary-color: #e2312b; // Vibrant purple
+$secondary-color: #fc9486; // Light purple
+$dark-bg: #121212;
+$dark-surface: #1e1e1e;
+$dark-text: #e1e1e1;
+$dark-border: #333;
+$error-color: #cf6679;
+$success-color: #03dac6;
 
-.booking_home{
-     font-family: 'Courier New', Courier, monospace;
-     text-transform: uppercase;
-     background-color: rgb(22, 21, 21);
-     padding:10px;
-     display: grid;
-     height: 100vh;
-     grid-template-rows: 1fr 2fr;
-     .header{
+.booking_home {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(22, 20, 20);
+  min-height: 100vh; // Changed from height to min-height
+  padding: 10px;
+  display: grid;
+  grid-template-rows: auto 1fr; // Changed to auto for header and 1fr for content
+  
+  .header {
     @include header_style;
     grid-row: 1/2;
     height: 150px;
+  }
+
+  .booking_section {
+    grid-row: 2/3;
+    margin: 0 20px; // Removed negative margin
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; // Changed to auto for scrollable content if needed
+    height: auto; // Let content determine height
     
+    .booking_title {
+      margin: 30px  20px; // Adjusted margins
+      align-items: center;
+      text-align: center;
+      
+      h1 {
+        background-image: linear-gradient(to right bottom, rgb(243, 131, 131), rgb(216, 19, 19));
+        -webkit-background-clip: text;
+        color: transparent;
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+
+// Base Styles
+.form_container {
+ max-width: 800px;
+      width: 100%;
+      margin: 0 auto 2rem; // Adjusted margin
+      padding: 2rem;
+      background-color: $dark-surface;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      color: $dark-text;
+     
+      height: auto; // Changed from 200% to auto
+      overflow: visible; // Changed from default to visible
+
+  // Groups
+  .group_one, .group_two, .group_three {
+    margin-bottom: 2rem;
+  }
+
+  .group_one {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    &_form--1, &_form--2 {
+      flex: 1;
+      min-width: 250px;
+    }
+  }
+
+  // Form Elements
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $dark-text;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 1.5rem;
+    border: 2px solid $dark-border;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: darken($dark-surface, 2%);
+    color: $dark-text;
+
+    &:hover {
+      border-color: $secondary-color;
+    }
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+    }
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  // File Upload Styles
+  .file-upload {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    &__input {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &__label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      border: 2px dashed $dark-border;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: darken($dark-surface, 3%);
+
+      &:hover {
+        border-color: $secondary-color;
+        background-color: darken($dark-surface, 5%);
+      }
+
+      svg {
+        margin-right: 10px;
+        fill: $secondary-color;
+      }
+    }
+
+    &__preview {
+      margin-top: 1rem;
+      display: none;
+
+      img {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 4px;
+      }
+
+      &--active {
+        display: block;
+      }
+    }
+  }
+
+  // Size Selection
+  .size-selection {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    &__option {
+      flex: 1;
+      text-align: center;
+
+      input[type="radio"] {
+        display: none;
+
+        &:checked + label {
+          background-color: $primary-color;
+          border-color: $primary-color;
+        }
+      }
+
+      label {
+        display: block;
+        padding: 1rem;
+        background-color: darken($dark-surface, 3%);
+        border: 2px solid $dark-border;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  // Special Sections
+  .tat_form {
+    background-color: darken($dark-surface, 3%);
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
 }
 
-.booking_section{
-    grid-row: 2/3;
-    margin: -4rem 20px;
-    .booking_title{
-        background-color: yellow;
-        margin: 10px;
-        align-items: center;
-        text-align: center;
-        h1{
+// Animations
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-        }
+.group_one, .group_two, .group_three {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.group_two {
+  animation-delay: 0.2s;
+}
+
+.group_three {
+  animation-delay: 0.4s;
+}
+
+// Responsive
+@media (max-width: 600px) {
+  .form_container {
+    padding: 1rem;
+
+    .group_one {
+      flex-direction: column;
+      gap: 0;
     }
-    .form_container{
-        color: blue;
-        .group_one{
-            background-color: aqua;
-            margin: 10px;
-            padding: 20px;
-            width: 100%;
-            .form_group{
-             input{
-                padding: 5px;
-                margin: 5px;
-             }
 
-            }
-        }
-        .group_two{
-            .tat_service{
-                display: flex;
-                align-items: center;
-              
-                button{
-                    padding: 5px;
-                }
-
-                h1{
-                    font-size: 10px;
-                    margin: 5px;
-
-                }
-
-                hr{
-                    height: 2px;
-                    width: 100%;
-                }
-            }
-
-            .tat_form{
-                display: flex;
-                background-color: yellowgreen;
-                flex-direction: column;
-                opacity: 1;
-                transform: scaleY(1);
-                transform-origin: top;
-                overflow: hidden;
-                transition: opacity 0.5s ease , transform 0.5s ease;
-                
-            }
-            .tat_form.hide{
-                    opacity: 0;
-                    transform: scaleY(0);
-                    pointer-events: none;
-                }
-            
-        }
+    .size-selection {
+      flex-direction: column;
     }
+  }
+}
 
 
     

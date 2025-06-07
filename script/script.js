@@ -98,6 +98,18 @@ function setupGalleryScroller() {
         });
     });
 
+     // Simple JavaScript for file preview
+  document.getElementById('reference-upload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        document.getElementById('preview-image').src = event.target.result;
+        document.getElementById('file-preview').classList.add('file-upload__preview--active');
+      };
+      reader.readAsDataURL(file);
+    }
+  });
     // Animation function
     let lastTime = 0;
     function animate(currentTime) {
@@ -144,7 +156,6 @@ function setupGalleryScroller() {
         
         gallery.addEventListener('mouseenter', () => {
             gallery.style.animationPlayState = 'paused';
-            
             // You can add zoom effect here if needed
         });
         

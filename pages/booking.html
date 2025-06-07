@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Booking</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="icon" href="/assets/images/logo.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -26,43 +26,70 @@
 
     <section class="booking_section">
         <div class="booking_title">
-            <h1>Book you appointment now</h1>
+            <h1>Book your appointment now</h1>
         </div>
         <form class="form_container">
-            <section class="group_one" >
-                <div class="form_group">
-                     <label for="fname">first Name  <input type="text" id="fname"> </label>
-                     <label for="lname">last name <input type="text" id="lname"></label>
-                </div>
-                <div class="form_group">
-                    <label for="phone">Phone number <input type="text" id="phone"> </label>
-                    <label for="email">email <input type="text" id="email"> </label>
-                </div>
-            </section>
+  <section class="group_one">
+    <div class="group_one_form--1">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" placeholder="Enter your first name">
+      
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" placeholder="Enter your last name">
+    </div>
+    <div class="group_one_form--2">
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" placeholder="Enter your phone number">
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email address">
+    </div>
+  </section>
 
-            <section class="group_two">
-                <div class="tat_service">
-                    <button id="tat_btn" type="button"><i class="fa-solid fa-angle-down"></i></button> 
-                    <!-- an html error causes browser rendering issue  -->
-                    <h1 class="tat_service--title">Tattoo service</h1>
-                     <hr>
-                </div>
-                <div class="tat_form" id="tat_form">
-                    <label for="description"> Tatoo description</label>
-                    <textarea name="description" id="description">descripbe ur tat</textarea>
-               
-                     <label for="placement">placement on body</label>
-                     <input type="text" id="placement">
-                </div>
-            </section>
+  <section class="group_two">
+    <div class="tat_form" id="tat_form">
+      <label for="description">Description</label>
+      <textarea name="description" id="description" placeholder="Tell us what you want in detail"></textarea>
+      
+      <label for="placement">Placement on Body</label>
+      <input type="text" id="placement" placeholder="Where should the tattoo be placed?">
+    </div>
+  </section>
 
-            
-           
+  <section class="group_three">
+    <div class="size-selection">
+      <div class="size-selection__option">
+        <input type="radio" id="size-small" name="tattoo-size" value="small">
+        <label for="size-small">Small (1-3 in)</label>
+      </div>
+      <div class="size-selection__option">
+        <input type="radio" id="size-medium" name="tattoo-size" value="medium">
+        <label for="size-medium">Medium (4-6 in)</label>
+      </div>
+      <div class="size-selection__option">
+        <input type="radio" id="size-large" name="tattoo-size" value="large">
+        <label for="size-large">Large (7+ in)</label>
+      </div>
+    </div>
 
+    <div class="file-upload">
+      <input type="file" id="reference-upload" class="file-upload__input" accept="image/*">
+      <label for="reference-upload" class="file-upload__label">
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z"/>
+        </svg>
+        <span>Upload Reference Image</span>
+      </label>
+      <div class="file-upload__preview" id="file-preview">
+        <img id="preview-image" src="" alt="Preview">
+      </div>
+    </div>
+  </section>
+</form>
 
-        </form>
     </section>
 
     <script src="/script/script.js"></script>
 </body>
+jkk
 </html>
